@@ -52,3 +52,44 @@ and
 ## Usage
 
 Add `UIAlertView+Blocks.h/m` into your project, or `pod 'UIAlertView+Blocks', :git => 'https://github.com/ryanmaxwell/UIAlertController-Blocks'` using CocoaPods.
+
+## Supporting < iOS 8
+
+You can add this pod to your project, along with 'UIAlertView+Blocks' or 'UIActionSheet+Blocks', and as long as you build with the iOS 8 SDK or greater, instantiate the appropriate class at runtime. e.g.
+
+```objc
+
+void(^deleteSalesOrderBlock)(void) = ^{
+    /* Delete the sales order here */
+};
+
+if ([UIAlertController class]) {
+    
+    /* UIAlertController is preferable on >= iOS 8, as the destructive button will be in red */
+    
+    [UIAlertController showAlertInViewController:self
+                                       withTitle:NSLocalizedString(@"AlertTitleDeleteSalesOrder", nil)
+                                         message:NSLocalizedString(@"AlertMessageDeleteSalesOrder", nil)
+                               cancelButtonTitle:NSLocalizedString(@"AlertButtonTitleCancel", nil)
+                          destructiveButtonTitle:NSLocalizedString(@"AlertButtonTitleDelete", nil)
+                               otherButtonTitles:nil
+                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger actionIndex){
+                                            if (actionIndex == UIAlertControllerDestructiveActionIndex) {
+                                                deleteSalesOrderBlock();
+                                            }
+                                        }];
+    
+    
+} else {
+    [UIAlertView showWithTitle:NSLocalizedString(@"AlertTitleDeleteSalesOrder", nil)
+                       message:NSLocalizedString(@"AlertMessageDeleteSalesOrder", nil)
+             cancelButtonTitle:NSLocalizedString(@"AlertButtonTitleCancel", nil)
+             otherButtonTitles:@[NSLocalizedString(@"AlertButtonTitleDelete", nil)]
+                      tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex){
+                          if (buttonIndex == alertView.firstOtherButtonIndex) {
+                              deleteSalesOrderBlock();
+                          }
+                      }];
+}
+
+```

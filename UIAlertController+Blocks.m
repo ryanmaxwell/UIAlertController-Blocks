@@ -14,13 +14,14 @@ NSInteger const UIAlertControllerFirstOtherActionIndex = 2;
 
 @implementation UIAlertController (Blocks)
 
-+ (instancetype)alertControllerWithTitle:(NSString *)title
-                                 message:(NSString *)message
-                          preferredStyle:(UIAlertControllerStyle)preferredStyle
-                       cancelButtonTitle:(NSString *)cancelButtonTitle
-                  destructiveButtonTitle:(NSString *)destructiveButtonTitle
-                       otherButtonTitles:(NSArray *)otherButtonTitles
-                                tapBlock:(UIAlertControllerCompletionBlock)tapBlock
++ (instancetype)showInViewController:(UIViewController *)viewController
+                           withTitle:(NSString *)title
+                             message:(NSString *)message
+                      preferredStyle:(UIAlertControllerStyle)preferredStyle
+                   cancelButtonTitle:(NSString *)cancelButtonTitle
+              destructiveButtonTitle:(NSString *)destructiveButtonTitle
+                   otherButtonTitles:(NSArray *)otherButtonTitles
+                            tapBlock:(UIAlertControllerCompletionBlock)tapBlock
 {
     UIAlertController *controller = [self alertControllerWithTitle:title
                                                            message:message
@@ -61,39 +62,45 @@ NSInteger const UIAlertControllerFirstOtherActionIndex = 2;
         [controller addAction:otherAction];
     }
     
+    [viewController presentViewController:controller animated:YES completion:nil];
+    
     return controller;
 }
 
-+ (instancetype)alertWithTitle:(NSString *)title
-                       message:(NSString *)message
-             cancelButtonTitle:(NSString *)cancelButtonTitle
-        destructiveButtonTitle:(NSString *)destructiveButtonTitle
-             otherButtonTitles:(NSArray *)otherButtonTitles
-                      tapBlock:(UIAlertControllerCompletionBlock)tapBlock
++ (instancetype)showAlertInViewController:(UIViewController *)viewController
+                                withTitle:(NSString *)title
+                                  message:(NSString *)message
+                        cancelButtonTitle:(NSString *)cancelButtonTitle
+                   destructiveButtonTitle:(NSString *)destructiveButtonTitle
+                        otherButtonTitles:(NSArray *)otherButtonTitles
+                                 tapBlock:(UIAlertControllerCompletionBlock)tapBlock
 {
-    return [self alertControllerWithTitle:title
-                                  message:message
-                           preferredStyle:UIAlertControllerStyleAlert
-                        cancelButtonTitle:cancelButtonTitle
-                   destructiveButtonTitle:destructiveButtonTitle
-                        otherButtonTitles:otherButtonTitles
-                                 tapBlock:tapBlock];
+    return [self showInViewController:viewController
+                            withTitle:title
+                              message:message
+                       preferredStyle:UIAlertControllerStyleAlert
+                    cancelButtonTitle:cancelButtonTitle
+               destructiveButtonTitle:destructiveButtonTitle
+                    otherButtonTitles:otherButtonTitles
+                             tapBlock:tapBlock];
 }
 
-+ (instancetype)actionSheetWithTitle:(NSString *)title
-                             message:(NSString *)message
-                   cancelButtonTitle:(NSString *)cancelButtonTitle
-              destructiveButtonTitle:(NSString *)destructiveButtonTitle
-                   otherButtonTitles:(NSArray *)otherButtonTitles
-                            tapBlock:(UIAlertControllerCompletionBlock)tapBlock
++ (instancetype)showActionSheetInViewController:(UIViewController *)viewController
+                                      withTitle:(NSString *)title
+                                        message:(NSString *)message
+                              cancelButtonTitle:(NSString *)cancelButtonTitle
+                         destructiveButtonTitle:(NSString *)destructiveButtonTitle
+                              otherButtonTitles:(NSArray *)otherButtonTitles
+                                       tapBlock:(UIAlertControllerCompletionBlock)tapBlock
 {
-    return [self alertControllerWithTitle:title
-                                  message:message
-                           preferredStyle:UIAlertControllerStyleActionSheet
-                        cancelButtonTitle:cancelButtonTitle
-                   destructiveButtonTitle:destructiveButtonTitle
-                        otherButtonTitles:otherButtonTitles
-                                 tapBlock:tapBlock];
+    return [self showInViewController:viewController
+                            withTitle:title
+                              message:message
+                       preferredStyle:UIAlertControllerStyleActionSheet
+                    cancelButtonTitle:cancelButtonTitle
+               destructiveButtonTitle:destructiveButtonTitle
+                    otherButtonTitles:otherButtonTitles
+                             tapBlock:tapBlock];
 }
 
 @end

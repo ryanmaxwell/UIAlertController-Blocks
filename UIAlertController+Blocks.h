@@ -16,26 +16,29 @@ typedef void (^UIAlertControllerCompletionBlock) (UIAlertController *controller,
 
 @interface UIAlertController (Blocks)
 
-+ (instancetype)alertControllerWithTitle:(NSString *)title
-                                 message:(NSString *)message
-                          preferredStyle:(UIAlertControllerStyle)preferredStyle
-                       cancelButtonTitle:(NSString *)cancelButtonTitle
-                  destructiveButtonTitle:(NSString *)destructiveButtonTitle
-                       otherButtonTitles:(NSArray *)otherButtonTitles
-                                tapBlock:(UIAlertControllerCompletionBlock)tapBlock;
-
-+ (instancetype)alertWithTitle:(NSString *)title
-                       message:(NSString *)message
-             cancelButtonTitle:(NSString *)cancelButtonTitle
-        destructiveButtonTitle:(NSString *)destructiveButtonTitle
-             otherButtonTitles:(NSArray *)otherButtonTitles
-                      tapBlock:(UIAlertControllerCompletionBlock)tapBlock;
-
-+ (instancetype)actionSheetWithTitle:(NSString *)title
++ (instancetype)showInViewController:(UIViewController *)viewController
+                           withTitle:(NSString *)title
                              message:(NSString *)message
+                      preferredStyle:(UIAlertControllerStyle)preferredStyle
                    cancelButtonTitle:(NSString *)cancelButtonTitle
               destructiveButtonTitle:(NSString *)destructiveButtonTitle
                    otherButtonTitles:(NSArray *)otherButtonTitles
                             tapBlock:(UIAlertControllerCompletionBlock)tapBlock;
+
++ (instancetype)showAlertInViewController:(UIViewController *)viewController
+                                withTitle:(NSString *)title
+                                  message:(NSString *)message
+                        cancelButtonTitle:(NSString *)cancelButtonTitle
+                   destructiveButtonTitle:(NSString *)destructiveButtonTitle
+                        otherButtonTitles:(NSArray *)otherButtonTitles
+                                 tapBlock:(UIAlertControllerCompletionBlock)tapBlock;
+
++ (instancetype)showActionSheetInViewController:(UIViewController *)viewController
+                                      withTitle:(NSString *)title
+                                        message:(NSString *)message
+                              cancelButtonTitle:(NSString *)cancelButtonTitle
+                         destructiveButtonTitle:(NSString *)destructiveButtonTitle
+                              otherButtonTitles:(NSArray *)otherButtonTitles
+                                       tapBlock:(UIAlertControllerCompletionBlock)tapBlock;
 
 @end

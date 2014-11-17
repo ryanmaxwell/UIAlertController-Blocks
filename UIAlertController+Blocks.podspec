@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "UIAlertController+Blocks"
-  s.version      = "0.2.1"
+  s.version      = "0.3"
   s.summary      = "Convenience methods for UIAlertController"
   s.homepage     = "https://github.com/ryanmaxwell/UIAlertController-Blocks"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }

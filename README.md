@@ -51,7 +51,7 @@ and
 
 ## Usage
 
-Add `UIAlertView+Blocks.h/m` into your project, or `pod 'UIAlertView+Blocks', :git => 'https://github.com/ryanmaxwell/UIAlertController-Blocks'` using CocoaPods.
+Add `UIAlertController+Blocks.h/m` into your project, or `pod 'UIAlertController+Blocks'` using CocoaPods.
 
 ## Supporting < iOS 8
 

@@ -92,3 +92,5 @@ if ([UIAlertController class]) {
 }
 
 ```
+
+I have also created the wrapper class [RMUniversalAlert](https://github.com/ryanmaxwell/RMUniversalAlert) which can do the above automatically for you.

@@ -6,7 +6,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2013 Ryan Maxwell
+//  Copyright (c) 2014 Ryan Maxwell
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -28,9 +28,9 @@
 
 #import "UIAlertController+Blocks.h"
 
-NSInteger const UIAlertControllerCancelActionIndex = 0;
-NSInteger const UIAlertControllerDestructiveActionIndex = 1;
-NSInteger const UIAlertControllerFirstOtherActionIndex = 2;
+NSInteger const UIAlertControllerBlocksCancelButtonIndex = 0;
+NSInteger const UIAlertControllerBlocksDestructiveButtonIndex = 1;
+NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
 
 @implementation UIAlertController (Blocks)
 
@@ -52,7 +52,7 @@ NSInteger const UIAlertControllerFirstOtherActionIndex = 2;
                                                                style:UIAlertActionStyleCancel
                                                              handler:^(UIAlertAction *action){
                                                                  if (tapBlock) {
-                                                                     tapBlock(controller, action, UIAlertControllerCancelActionIndex);
+                                                                     tapBlock(controller, action, UIAlertControllerBlocksCancelButtonIndex);
                                                                  }
                                                              }];
         [controller addAction:cancelAction];
@@ -63,7 +63,7 @@ NSInteger const UIAlertControllerFirstOtherActionIndex = 2;
                                                                     style:UIAlertActionStyleDestructive
                                                                   handler:^(UIAlertAction *action){
                                                                       if (tapBlock) {
-                                                                          tapBlock(controller, action, UIAlertControllerDestructiveActionIndex);
+                                                                          tapBlock(controller, action, UIAlertControllerBlocksDestructiveButtonIndex);
                                                                       }
                                                                   }];
         [controller addAction:destructiveAction];
@@ -76,7 +76,7 @@ NSInteger const UIAlertControllerFirstOtherActionIndex = 2;
                                                               style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction *action){
                                                                 if (tapBlock) {
-                                                                    tapBlock(controller, action, UIAlertControllerFirstOtherActionIndex + i);
+                                                                    tapBlock(controller, action, UIAlertControllerBlocksFirstOtherButtonIndex + i);
                                                                 }
                                                             }];
         [controller addAction:otherAction];

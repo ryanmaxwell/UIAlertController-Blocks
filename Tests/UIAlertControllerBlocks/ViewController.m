@@ -33,14 +33,14 @@
                                cancelButtonTitle:@"Cancel"
                           destructiveButtonTitle:@"Delete"
                                otherButtonTitles:@[@"First Other", @"Second Other"]
-                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger actionIndex){
+                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
                                              
-                                             if (actionIndex == UIAlertControllerCancelActionIndex) {
+                                             if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
                                                  NSLog(@"Cancel Tapped");
-                                             } else if (actionIndex == UIAlertControllerDestructiveActionIndex) {
+                                             } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
                                                  NSLog(@"Delete Tapped");
-                                             } else if (actionIndex >= UIAlertControllerFirstOtherActionIndex) {
-                                                 NSLog(@"Other Action Index %ld", (long)actionIndex - UIAlertControllerFirstOtherActionIndex);
+                                             } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
+                                                 NSLog(@"Other Button Index %ld", (long)buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex);
                                              }
                                          }];
 }
@@ -53,14 +53,14 @@
                                      cancelButtonTitle:@"Cancel"
                                 destructiveButtonTitle:@"Delete"
                                      otherButtonTitles:@[@"First Other", @"Second Other"]
-                                              tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger actionIndex){
+                                              tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
                                                  
-                                                     if (actionIndex == UIAlertControllerCancelActionIndex) {
+                                                     if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
                                                          NSLog(@"Cancel Tapped");
-                                                     } else if (actionIndex == UIAlertControllerDestructiveActionIndex) {
+                                                     } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
                                                          NSLog(@"Delete Tapped");
-                                                     } else if (actionIndex >= UIAlertControllerFirstOtherActionIndex) {
-                                                         NSLog(@"Other Action Index %ld", (long)actionIndex - UIAlertControllerFirstOtherActionIndex);
+                                                     } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
+                                                         NSLog(@"Other Action Index %ld", (long)buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex);
                                                      }
                                               }];
 }

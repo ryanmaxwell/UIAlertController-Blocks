@@ -6,7 +6,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2013 Ryan Maxwell
+//  Copyright (c) 2014 Ryan Maxwell
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -28,11 +28,11 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSInteger const UIAlertControllerCancelActionIndex;
-extern NSInteger const UIAlertControllerDestructiveActionIndex;
-extern NSInteger const UIAlertControllerFirstOtherActionIndex;
+extern NSInteger const UIAlertControllerBlocksCancelButtonIndex;
+extern NSInteger const UIAlertControllerBlocksDestructiveButtonIndex;
+extern NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex;
 
-typedef void (^UIAlertControllerCompletionBlock) (UIAlertController *controller, UIAlertAction *action, NSInteger actionIndex);
+typedef void (^UIAlertControllerCompletionBlock) (UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex);
 
 @interface UIAlertController (Blocks)
 

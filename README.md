@@ -6,23 +6,22 @@ Convenience methods for UIAlertController. The API follows the same pattern as [
 Create and show an alert controller with a single call:
 
 ```objc
-[UIAlertController showInViewController:self
-                              withTitle:@"Test Alert"
-                                message:@"Test Message"
-                         preferredStyle:UIAlertControllerStyleAlert
-                      cancelButtonTitle:@"Cancel"
-                 destructiveButtonTitle:@"Delete"
-                      otherButtonTitles:@[@"First Other", @"Second Other"]
-                               tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger actionIndex){
+[UIAlertController showAlertInViewController:self
+                                       withTitle:@"Test Alert"
+                                         message:@"Test Message"
+                               cancelButtonTitle:@"Cancel"
+                          destructiveButtonTitle:@"Delete"
+                               otherButtonTitles:@[@"First Other", @"Second Other"]
+                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
                                              
-                                   if (actionIndex == UIAlertControllerCancelActionIndex) {
-                                       NSLog(@"Cancel Tapped");
-                                   } else if (actionIndex == UIAlertControllerDestructiveActionIndex) {
-                                       NSLog(@"Delete Tapped");
-                                   } else if (actionIndex >= UIAlertControllerFirstOtherActionIndex) {
-                                       NSLog(@"Other Action Index %ld", (long)actionIndex - UIAlertControllerFirstOtherActionIndex);
-                                   }
-}];
+                                             if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
+                                                 NSLog(@"Cancel Tapped");
+                                             } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
+                                                 NSLog(@"Delete Tapped");
+                                             } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
+                                                 NSLog(@"Other Button Index %ld", (long)buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex);
+                                             }
+                                         }];
 ```
 
 Explicitly create alerts or action sheets with
@@ -73,8 +72,8 @@ if ([UIAlertController class]) {
                                cancelButtonTitle:NSLocalizedString(@"AlertButtonTitleCancel", nil)
                           destructiveButtonTitle:NSLocalizedString(@"AlertButtonTitleDelete", nil)
                                otherButtonTitles:nil
-                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger actionIndex){
-                                            if (actionIndex == UIAlertControllerDestructiveActionIndex) {
+                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
+                                            if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
                                                 deleteSalesOrderBlock();
                                             }
                                         }];

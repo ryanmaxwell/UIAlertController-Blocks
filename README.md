@@ -5,6 +5,8 @@ Convenience methods for UIAlertController. The API follows the same pattern as [
 
 Create and show an alert controller with a single call:
 
+### Objective-C
+
 ```objc
 [UIAlertController showAlertInViewController:self
                                        withTitle:@"Test Alert"
@@ -13,7 +15,7 @@ Create and show an alert controller with a single call:
                           destructiveButtonTitle:@"Delete"
                                otherButtonTitles:@[@"First Other", @"Second Other"]
                                         tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
-                                             
+
                                              if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
                                                  NSLog(@"Cancel Tapped");
                                              } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
@@ -22,6 +24,28 @@ Create and show an alert controller with a single call:
                                                  NSLog(@"Other Button Index %ld", (long)buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex);
                                              }
                                          }];
+```
+
+### Swift
+
+```swift
+
+UIAlertController.showAlertInViewController(self,
+            withTitle: "Test Alert",
+            message: "Test Message",
+            cancelButtonTitle: "Cancel",
+            destructiveButtonTitle: "Delete",
+            otherButtonTitles: ["First Other", "Second Other"],
+            tapBlock: {(controller, action, buttonIndex) in
+                
+                if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
+                    println("Cancel Tapped")
+                } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
+                    println("Delete Tapped")
+                } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
+                    println("Other Button Index \(buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex)")
+                }
+            })
 ```
 
 Explicitly create alerts or action sheets with

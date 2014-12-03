@@ -9,21 +9,21 @@ Create and show an alert controller with a single call:
 
 ```objc
 [UIAlertController showAlertInViewController:self
-                                       withTitle:@"Test Alert"
-                                         message:@"Test Message"
-                               cancelButtonTitle:@"Cancel"
-                          destructiveButtonTitle:@"Delete"
-                               otherButtonTitles:@[@"First Other", @"Second Other"]
-                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
+                                   withTitle:@"Test Alert"
+                                     message:@"Test Message"
+                           cancelButtonTitle:@"Cancel"
+                      destructiveButtonTitle:@"Delete"
+                           otherButtonTitles:@[@"First Other", @"Second Other"]
+                                    tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
 
-                                             if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
-                                                 NSLog(@"Cancel Tapped");
-                                             } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
-                                                 NSLog(@"Delete Tapped");
-                                             } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
-                                                 NSLog(@"Other Button Index %ld", (long)buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex);
-                                             }
-                                         }];
+                                         if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
+                                             NSLog(@"Cancel Tapped");
+                                         } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
+                                             NSLog(@"Delete Tapped");
+                                         } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
+                                             NSLog(@"Other Button Index %ld", (long)buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex);
+                                         }
+                                     }];
 ```
 
 ### Swift
@@ -31,21 +31,21 @@ Create and show an alert controller with a single call:
 ```swift
 
 UIAlertController.showAlertInViewController(self,
-            withTitle: "Test Alert",
-            message: "Test Message",
-            cancelButtonTitle: "Cancel",
-            destructiveButtonTitle: "Delete",
-            otherButtonTitles: ["First Other", "Second Other"],
-            tapBlock: {(controller, action, buttonIndex) in
-                
-                if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
-                    println("Cancel Tapped")
-                } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
-                    println("Delete Tapped")
-                } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
-                    println("Other Button Index \(buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex)")
-                }
-            })
+    withTitle: "Test Alert",
+    message: "Test Message",
+    cancelButtonTitle: "Cancel",
+    destructiveButtonTitle: "Delete",
+    otherButtonTitles: ["First Other", "Second Other"],
+    tapBlock: {(controller, action, buttonIndex) in
+    
+        if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
+            println("Cancel Tapped")
+        } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
+            println("Delete Tapped")
+        } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
+            println("Other Button Index \(buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex)")
+        }
+    })
 ```
 
 Explicitly create alerts or action sheets with

@@ -8,5 +8,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ryanmaxwell/UIAlertController-Blocks.git", :tag => '0.5' }
   s.source_files  = 'UIAlertController+Blocks.{h,m}'
   s.requires_arc = true
-  s.platform = 'ios'
+  s.platform = 'ios', '8.0'
 end

@@ -8,5 +8,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ryanmaxwell/UIAlertController-Blocks.git", :tag => '0.5' }
   s.source_files  = 'UIAlertController+Blocks.{h,m}'
   s.requires_arc = true
-  s.platform = 'ios', '8.0'
+  s.platform = 'ios', '6.0' # 6.0 as this is a dependency for RMUniversalAlert, and requires __weak
 end

@@ -43,9 +43,9 @@ NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
                    otherButtonTitles:(NSArray *)otherButtonTitles
                             tapBlock:(UIAlertControllerCompletionBlock)tapBlock
 {
-    __weak UIAlertController *controller = [self alertControllerWithTitle:title
-                                                                  message:message
-                                                           preferredStyle:preferredStyle];
+    UIAlertController *controller = [self alertControllerWithTitle:title
+                                                           message:message
+                                                    preferredStyle:preferredStyle];
     
     if (cancelButtonTitle) {
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle

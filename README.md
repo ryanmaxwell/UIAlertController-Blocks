@@ -43,7 +43,7 @@ UIAlertController.showAlertInViewController(self,
         } else if (buttonIndex == controller.destructiveButtonIndex) {
             println("Delete Tapped")
         } else if (buttonIndex >= controller.firstOtherButtonIndex) {
-            println("Other Button Index \(buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex)")
+            println("Other Button Index \(buttonIndex - controller.firstOtherButtonIndex)")
         }
     })
 ```
@@ -97,7 +97,7 @@ if ([UIAlertController class]) {
                           destructiveButtonTitle:NSLocalizedString(@"AlertButtonTitleDelete", nil)
                                otherButtonTitles:nil
                                         tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
-                                            if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
+                                            if (buttonIndex == controller.destructiveButtonIndex) {
                                                 deleteSalesOrderBlock();
                                             }
                                         }];

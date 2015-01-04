@@ -28,9 +28,9 @@
 
 #import "UIAlertController+Blocks.h"
 
-NSInteger const UIAlertControllerBlocksCancelButtonIndex = 0;
-NSInteger const UIAlertControllerBlocksDestructiveButtonIndex = 1;
-NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
+static NSInteger const UIAlertControllerBlocksCancelButtonIndex = 0;
+static NSInteger const UIAlertControllerBlocksDestructiveButtonIndex = 1;
+static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
 
 @implementation UIAlertController (Blocks)
 

@@ -28,10 +28,6 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSInteger const UIAlertControllerBlocksCancelButtonIndex;
-extern NSInteger const UIAlertControllerBlocksDestructiveButtonIndex;
-extern NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex;
-
 typedef void (^UIAlertControllerCompletionBlock) (UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex);
 
 @interface UIAlertController (Blocks)

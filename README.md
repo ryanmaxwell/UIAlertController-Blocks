@@ -16,12 +16,12 @@ Create and show an alert controller with a single call:
                            otherButtonTitles:@[@"First Other", @"Second Other"]
                                     tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
 
-                                         if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
+                                         if (buttonIndex == controller.cancelButtonIndex) {
                                              NSLog(@"Cancel Tapped");
-                                         } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
+                                         } else if (buttonIndex == controller.destructiveButtonIndex) {
                                              NSLog(@"Delete Tapped");
-                                         } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
-                                             NSLog(@"Other Button Index %ld", (long)buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex);
+                                         } else if (buttonIndex >= controller.firstOtherButtonIndex) {
+                                             NSLog(@"Other Button Index %ld", (long)buttonIndex - controller.firstOtherButtonIndex);
                                          }
                                      }];
 ```
@@ -38,11 +38,11 @@ UIAlertController.showAlertInViewController(self,
     otherButtonTitles: ["First Other", "Second Other"],
     tapBlock: {(controller, action, buttonIndex) in
     
-        if (buttonIndex == UIAlertControllerBlocksCancelButtonIndex) {
+        if (buttonIndex == controller.cancelButtonIndex) {
             println("Cancel Tapped")
-        } else if (buttonIndex == UIAlertControllerBlocksDestructiveButtonIndex) {
+        } else if (buttonIndex == controller.destructiveButtonIndex) {
             println("Delete Tapped")
-        } else if (buttonIndex >= UIAlertControllerBlocksFirstOtherButtonIndex) {
+        } else if (buttonIndex >= controller.firstOtherButtonIndex) {
             println("Other Button Index \(buttonIndex - UIAlertControllerBlocksFirstOtherButtonIndex)")
         }
     })

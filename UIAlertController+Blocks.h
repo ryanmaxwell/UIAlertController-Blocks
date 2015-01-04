@@ -61,4 +61,9 @@ typedef void (^UIAlertControllerCompletionBlock) (UIAlertController *controller,
                               otherButtonTitles:(NSArray *)otherButtonTitles
                                        tapBlock:(UIAlertControllerCompletionBlock)tapBlock;
 
+@property (readonly, nonatomic) BOOL visible;
+@property (readonly, nonatomic) NSInteger cancelButtonIndex;
+@property (readonly, nonatomic) NSInteger firstOtherButtonIndex;
+@property (readonly, nonatomic) NSInteger destructiveButtonIndex;
+
 @end

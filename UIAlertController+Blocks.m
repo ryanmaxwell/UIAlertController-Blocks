@@ -125,4 +125,26 @@ NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
                              tapBlock:tapBlock];
 }
 
+#pragma mark -
+
+- (BOOL)visible
+{
+    return self.view.superview != nil;
+}
+
+- (NSInteger)cancelButtonIndex
+{
+    return UIAlertControllerBlocksCancelButtonIndex;
+}
+
+- (NSInteger)firstOtherButtonIndex
+{
+    return UIAlertControllerBlocksFirstOtherButtonIndex;
+}
+
+- (NSInteger)destructiveButtonIndex
+{
+    return UIAlertControllerBlocksDestructiveButtonIndex;
+}
+
 @end

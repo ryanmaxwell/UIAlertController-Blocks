@@ -39,6 +39,7 @@ typedef void (^UIAlertControllerCompletionBlock) (UIAlertController *controller,
                    cancelButtonTitle:(NSString *)cancelButtonTitle
               destructiveButtonTitle:(NSString *)destructiveButtonTitle
                    otherButtonTitles:(NSArray *)otherButtonTitles
+  popoverPresentationControllerBlock:(void(^)(UIPopoverPresentationController *popover))popoverPresentationControllerBlock
                             tapBlock:(UIAlertControllerCompletionBlock)tapBlock;
 
 + (instancetype)showAlertInViewController:(UIViewController *)viewController
@@ -55,6 +56,7 @@ typedef void (^UIAlertControllerCompletionBlock) (UIAlertController *controller,
                               cancelButtonTitle:(NSString *)cancelButtonTitle
                          destructiveButtonTitle:(NSString *)destructiveButtonTitle
                               otherButtonTitles:(NSArray *)otherButtonTitles
+             popoverPresentationControllerBlock:(void(^)(UIPopoverPresentationController *popover))popoverPresentationControllerBlock
                                        tapBlock:(UIAlertControllerCompletionBlock)tapBlock;
 
 @property (readonly, nonatomic) BOOL visible;

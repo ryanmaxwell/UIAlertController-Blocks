@@ -45,7 +45,7 @@
                                         tapBlock:self.tapBlock];
 }
 
-- (IBAction)showActionSheet:(id)sender
+- (IBAction)showActionSheet:(UIButton *)sender
 {
     [UIAlertController showActionSheetInViewController:self
                                              withTitle:@"Test Action Sheet"
@@ -53,6 +53,10 @@
                                      cancelButtonTitle:@"Cancel"
                                 destructiveButtonTitle:@"Delete"
                                      otherButtonTitles:@[@"First Other", @"Second Other"]
+                    popoverPresentationControllerBlock:^(UIPopoverPresentationController *popover){
+                        popover.sourceView = self.view;
+                        popover.sourceRect = sender.frame;
+                    }
                                               tapBlock:self.tapBlock];
 }
 

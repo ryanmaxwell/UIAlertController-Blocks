@@ -41,6 +41,7 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
                    cancelButtonTitle:(NSString *)cancelButtonTitle
               destructiveButtonTitle:(NSString *)destructiveButtonTitle
                    otherButtonTitles:(NSArray *)otherButtonTitles
+  popoverPresentationControllerBlock:(void(^)(UIPopoverPresentationController *popover))popoverPresentationControllerBlock
                             tapBlock:(UIAlertControllerCompletionBlock)tapBlock
 {
     UIAlertController *strongController = [self alertControllerWithTitle:title
@@ -84,6 +85,10 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
         [controller addAction:otherAction];
     }
     
+    if (popoverPresentationControllerBlock) {
+        popoverPresentationControllerBlock(controller.popoverPresentationController);
+    }
+    
     [viewController presentViewController:controller animated:YES completion:nil];
     
     return controller;
@@ -104,6 +109,7 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
                     cancelButtonTitle:cancelButtonTitle
                destructiveButtonTitle:destructiveButtonTitle
                     otherButtonTitles:otherButtonTitles
+            popoverPresentationControllerBlock:nil
                              tapBlock:tapBlock];
 }
 
@@ -115,6 +121,25 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
                               otherButtonTitles:(NSArray *)otherButtonTitles
                                        tapBlock:(UIAlertControllerCompletionBlock)tapBlock
 {
+    return [self showActionSheetInViewController:viewController
+                                       withTitle:title
+                                         message:message
+                               cancelButtonTitle:cancelButtonTitle
+                          destructiveButtonTitle:destructiveButtonTitle
+                               otherButtonTitles:otherButtonTitles
+              popoverPresentationControllerBlock:nil
+                                        tapBlock:tapBlock];
+}
+
++ (instancetype)showActionSheetInViewController:(UIViewController *)viewController
+                                      withTitle:(NSString *)title
+                                        message:(NSString *)message
+                              cancelButtonTitle:(NSString *)cancelButtonTitle
+                         destructiveButtonTitle:(NSString *)destructiveButtonTitle
+                              otherButtonTitles:(NSArray *)otherButtonTitles
+             popoverPresentationControllerBlock:(void(^)(UIPopoverPresentationController *popover))popoverPresentationControllerBlock
+                                       tapBlock:(UIAlertControllerCompletionBlock)tapBlock
+{
     return [self showInViewController:viewController
                             withTitle:title
                               message:message
@@ -122,6 +147,7 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
                     cancelButtonTitle:cancelButtonTitle
                destructiveButtonTitle:destructiveButtonTitle
                     otherButtonTitles:otherButtonTitles
+            popoverPresentationControllerBlock:popoverPresentationControllerBlock
                              tapBlock:tapBlock];
 }
 

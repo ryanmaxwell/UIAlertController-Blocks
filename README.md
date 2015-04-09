@@ -73,6 +73,10 @@ and
                                        tapBlock:(UIAlertControllerCompletionBlock)tapBlock;
 ```
 
+## Requirements
+
+The headers use the new Objective-C [nullability annotations](https://developer.apple.com/swift/blog/?id=25) for nicer interoperability with Swift, so you will need Xcode 6.3 or later to compile it.
+
 ## Usage
 
 Add `UIAlertController+Blocks.h/m` into your project, or `pod 'UIAlertController+Blocks'` using CocoaPods.

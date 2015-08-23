@@ -80,6 +80,7 @@ Since version 0.9 the headers use the new Objective-C [nullability annotations](
 ## Usage
 
 Add `UIAlertController+Blocks.h/m` into your project, or `pod 'UIAlertController+Blocks'` using CocoaPods.
+In your code, either `#import <UIAlertController+Blocks/UIAlertController+Blocks.h>` (Objective-C header), `@import UIAlertController_Blocks;` (Objective-C module), or `import UIAlertController_Blocks` (Swift).
 
 ## Supporting < iOS 8
 

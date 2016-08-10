@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.source_files  = 'UIAlertController+Blocks.{h,m}'
   s.requires_arc = true
   s.ios.deployment_target = '6.0' # 6.0 as this is a dependency for RMUniversalAlert
-  s.tvos_deployment_target = '9.0'
+  s.tvos.deployment_target = '9.0'
 end

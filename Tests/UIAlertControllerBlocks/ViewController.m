@@ -53,11 +53,15 @@
                                      cancelButtonTitle:@"Cancel"
                                 destructiveButtonTitle:@"Delete"
                                      otherButtonTitles:@[@"First Other", @"Second Other"]
+#if TARGET_OS_IOS
                     popoverPresentationControllerBlock:^(UIPopoverPresentationController *popover){
+
                         popover.sourceView = self.view;
                         popover.sourceRect = sender.frame;
                     }
+#endif
                                               tapBlock:self.tapBlock];
 }
+
 
 @end

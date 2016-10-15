@@ -93,7 +93,9 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
     }
 #endif
     
-    [viewController presentViewController:controller animated:YES completion:nil];
+    [viewController.presentedViewController ?: viewController presentViewController:controller
+                                                                           animated:YES
+                                                                         completion:nil];
     
     return controller;
 }

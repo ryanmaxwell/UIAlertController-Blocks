@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "UIAlertController+Blocks.h"
+#import "SecondViewController.h"
 
 @interface ViewController ()
 
@@ -61,6 +62,29 @@
                     }
 #endif
                                               tapBlock:self.tapBlock];
+}
+
+- (IBAction)showAlertOverPresentedViewController
+{
+    UIViewController *vc2 = [SecondViewController new];
+    [self presentViewController:vc2 animated:YES completion:^{
+        UIViewController *vc3 = [ThirdViewController new];
+        [vc2 presentViewController:vc3 animated:YES completion:^{
+            
+            [UIAlertController showAlertInViewController:self
+                                               withTitle:@"Test Alert"
+                                                 message:@"Test Message"
+                                       cancelButtonTitle:@"OK"
+                                  destructiveButtonTitle:nil
+                                       otherButtonTitles:nil
+                                                tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
+                                                    [self dismissViewControllerAnimated:YES completion:^{
+                                                        [self dismissViewControllerAnimated:YES completion:nil];
+                                                    }];
+                                                }];
+        }];
+        
+    }];
 }
 
 

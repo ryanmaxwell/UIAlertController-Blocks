@@ -14,6 +14,8 @@
 		944A456219C14996001A402B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944A456119C14996001A402B /* Images.xcassets */; };
 		944A456519C14996001A402B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 944A456319C14996001A402B /* LaunchScreen.xib */; };
 		944A457119C14996001A402B /* UIAlertControllerBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 944A457019C14996001A402B /* UIAlertControllerBlocksTests.m */; };
+		945D806D1DB8CE9100283692 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945D806C1DB8CE9100283692 /* SecondViewController.m */; };
+		945D806E1DB8D26A00283692 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945D806C1DB8CE9100283692 /* SecondViewController.m */; };
 		947490511D5BD89B00D606FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 947490501D5BD89B00D606FB /* main.m */; };
 		9474905A1D5BD89B00D606FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947490581D5BD89B00D606FB /* Main.storyboard */; };
 		9474905C1D5BD89B00D606FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9474905B1D5BD89B00D606FB /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		944A456A19C14996001A402B /* UIAlertControllerBlocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIAlertControllerBlocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		944A456F19C14996001A402B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		944A457019C14996001A402B /* UIAlertControllerBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAlertControllerBlocksTests.m; sourceTree = "<group>"; };
+		945D806B1DB8CE9100283692 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		945D806C1DB8CE9100283692 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		9474904D1D5BD89B00D606FB /* UIAlertControllerBlocksTVExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIAlertControllerBlocksTVExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		947490501D5BD89B00D606FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		947490591D5BD89B00D606FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				944A456119C14996001A402B /* Images.xcassets */,
 				944A456319C14996001A402B /* LaunchScreen.xib */,
 				944A455419C14996001A402B /* Supporting Files */,
+				945D806B1DB8CE9100283692 /* SecondViewController.h */,
+				945D806C1DB8CE9100283692 /* SecondViewController.m */,
 			);
 			path = UIAlertControllerBlocks;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945D806D1DB8CE9100283692 /* SecondViewController.m in Sources */,
 				94B2A8831A18CB60002602A4 /* UIAlertController+Blocks.m in Sources */,
 				944A455D19C14996001A402B /* ViewController.m in Sources */,
 				944A455A19C14996001A402B /* AppDelegate.m in Sources */,
@@ -314,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945D806E1DB8D26A00283692 /* SecondViewController.m in Sources */,
 				947490611D5BD8BC00D606FB /* UIAlertController+Blocks.m in Sources */,
 				947490511D5BD89B00D606FB /* main.m in Sources */,
 				947490631D5BDAA700D606FB /* ViewController.m in Sources */,
@@ -566,6 +574,7 @@
 				947490601D5BD89B00D606FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

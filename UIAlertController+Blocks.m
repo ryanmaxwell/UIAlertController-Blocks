@@ -32,6 +32,12 @@ static NSInteger const UIAlertControllerBlocksCancelButtonIndex = 0;
 static NSInteger const UIAlertControllerBlocksDestructiveButtonIndex = 1;
 static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
 
+@interface UIViewController (UACB_Topmost)
+
+- (UIViewController *)uacb_topmost;
+
+@end
+
 @implementation UIAlertController (Blocks)
 
 + (instancetype)showInViewController:(UIViewController *)viewController
@@ -93,7 +99,7 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
     }
 #endif
     
-    [viewController presentViewController:controller animated:YES completion:nil];
+    [viewController.uacb_topmost presentViewController:controller animated:YES completion:nil];
     
     return controller;
 }
@@ -163,6 +169,22 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
 - (NSInteger)destructiveButtonIndex
 {
     return UIAlertControllerBlocksDestructiveButtonIndex;
+}
+
+@end
+
+@implementation UIViewController (UACB_Topmost)
+
+- (UIViewController *)uacb_topmost
+{
+    UIViewController *topmost = self;
+    
+    UIViewController *above;
+    while ((above = topmost.presentedViewController)) {
+        topmost = above;
+    }
+    
+    return topmost;
 }
 
 @end

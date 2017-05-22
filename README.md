@@ -29,23 +29,23 @@ Create and show an alert controller with a single call:
 ### Swift
 
 ```swift
-
-UIAlertController.showAlertInViewController(self,
+UIAlertController.showAlert(
+    in: self,
     withTitle: "Test Alert",
     message: "Test Message",
     cancelButtonTitle: "Cancel",
     destructiveButtonTitle: "Delete",
     otherButtonTitles: ["First Other", "Second Other"],
-    tapBlock: {(controller, action, buttonIndex) in
-    
+    tap: {(controller, action, buttonIndex) in
         if (buttonIndex == controller.cancelButtonIndex) {
-            println("Cancel Tapped")
-        } else if (buttonIndex == controller.destructiveButtonIndex) {
-            println("Delete Tapped")
-        } else if (buttonIndex >= controller.firstOtherButtonIndex) {
-            println("Other Button Index \(buttonIndex - controller.firstOtherButtonIndex)")
-        }
-    })
+            print("Cancel Tapped")
+         } else if (buttonIndex == controller.destructiveButtonIndex) {
+            print("Delete Tapped")
+         } else if (buttonIndex >= controller.firstOtherButtonIndex) {
+            print("Other Button Index \(buttonIndex - controller.firstOtherButtonIndex)")
+         }
+    }
+)
 ```
 
 Explicitly create alerts or action sheets with

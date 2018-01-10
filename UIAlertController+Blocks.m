@@ -87,7 +87,7 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
                                                               style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction *action){
                                                                 if (tapBlock) {
-                                                                    tapBlock(controller, action, UIAlertControllerBlocksFirstOtherButtonIndex + i);
+                                                                    tapBlock(controller, action, UIAlertControllerBlocksFirstOtherButtonIndex + (NSInteger)i);
                                                                 }
                                                             }];
         [controller addAction:otherAction];

@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/ryanmaxwell/UIAlertController-Blocks"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = "Ryan Maxwell"
-  s.source       = { :git => "https://github.com/tc-sgupta/UIAlertController-Blocks.git", :tag => '0.9.2' }
+  s.source       = { :git => "https://github.com/ryanmaxwell/UIAlertController-Blocks.git", :tag => '0.9.2' }
   s.source_files  = 'Sources/UIAlertController_Blocks/UIAlertController+Blocks.{h,m}'
   s.requires_arc = true
   s.ios.deployment_target = '6.0' # 6.0 as this is a dependency for RMUniversalAlert

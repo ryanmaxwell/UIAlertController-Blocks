@@ -21,6 +21,7 @@ let package = Package(
         .target(
             name: "UIAlertControllerBlocks",
             path: ".",
+            publicHeadersPath: ".",
             dependencies: [])
     ]
 )
